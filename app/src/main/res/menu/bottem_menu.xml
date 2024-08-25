@@ -8,22 +8,19 @@
         android:icon="@drawable/baseline_home_24"/>
 
     <item
-        android:id="@+id/shorts"
-        android:title="Consult"
-        android:icon="@drawable/baseline_whatshot_24"
-        />
+        android:id="@+id/Consult"
+        android:title="appoinment"
+        android:icon="@drawable/baseline_whatshot_24" />
 
     <item
-        android:title=""
-        />
-
-    <item
-        android:id="@+id/subscriptions"
-        android:title="Appoinment"
+        android:id="@+id/Appointment"
+        android:title="consultation"
         android:icon="@drawable/baseline_subscriptions_24" />
+
     <item
-        android:id="@+id/library"
-        android:title="health"
+        android:id="@+id/myhealth"
+        android:title="Myhealth"
         android:icon="@drawable/baseline_video_library_24" />
+
 
 </menu>

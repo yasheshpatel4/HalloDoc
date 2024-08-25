@@ -3,14 +3,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".consultations">
+    tools:context=".myhealth">
 
     <!-- TODO: Update blank fragment layout -->
     <TextView
-        android:id="@+id/shorts"
+        android:id="@+id/myhealth"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="short"
+        android:text="Myhealth"
         android:textSize="30sp"
         android:gravity="center"
         android:textColor="@color/lavender"

@@ -34,7 +34,6 @@ public class dashboard extends AppCompatActivity {
 
         // Initialize views
         b = findViewById(R.id.bottomNavigationView);
-        fab = findViewById(R.id.fab);
 
         replaceFragment(new home());
 
@@ -43,78 +42,20 @@ public class dashboard extends AppCompatActivity {
 
             if (item.getItemId() == R.id.home) {
                 replaceFragment(new home());
-            } else if (item.getItemId() == R.id.shorts) {
+            } else if (item.getItemId() == R.id.Consult) {
                 replaceFragment(new consultations());
-            } else if (item.getItemId() == R.id.subscriptions) {
+            } else if (item.getItemId() == R.id.Appointment) {
+                replaceFragment(new appointment());
+            } else if (item.getItemId() == R.id.myhealth) {
                 replaceFragment(new myhealth());
-            } else if (item.getItemId() == R.id.library) {
-                replaceFragment(new appointement());
             }
-
             return true;
         });
-
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                showBottomDialog();
-            }
-        });
-
     }
-
     private void replaceFragment(Fragment fragment) {
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.replace(R.id.frame_layout, fragment);
         fragmentTransaction.commit();
-    }
-
-    private void showBottomDialog() {
-        final Dialog dialog = new Dialog(this);
-        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-        dialog.setContentView(R.layout.bottmsheetlayout);
-
-        LinearLayout videoLayout = dialog.findViewById(R.id.layoutVideo);
-        LinearLayout shortsLayout = dialog.findViewById(R.id.layoutShorts);
-        LinearLayout liveLayout = dialog.findViewById(R.id.layoutLive);
-        ImageView cancelButton = dialog.findViewById(R.id.cancelButton);
-
-        videoLayout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                dialog.dismiss();
-                Toast.makeText(dashboard.this, "Upload a Video is clicked", Toast.LENGTH_SHORT).show();
-            }
-        });
-
-        shortsLayout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                dialog.dismiss();
-                Toast.makeText(dashboard.this, "Create a short is Clicked", Toast.LENGTH_SHORT).show();
-            }
-        });
-
-        liveLayout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                dialog.dismiss();
-                Toast.makeText(dashboard.this, "Go live is Clicked", Toast.LENGTH_SHORT).show();
-            }
-        });
-
-        cancelButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                dialog.dismiss();
-            }
-        });
-
-        dialog.show();
-        dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-        dialog.getWindow().getAttributes().windowAnimations = R.style.DialogAnimation;
-        dialog.getWindow().setGravity(Gravity.BOTTOM);
     }
 }
