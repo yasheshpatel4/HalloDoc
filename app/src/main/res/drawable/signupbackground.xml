@@ -1,0 +1,11 @@
+<!-- res/drawable/signup_background.xml -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="rectangle">
+            <gradient
+                android:startColor="#325187"
+                android:endColor="#547ABC"
+                android:angle="90"/> <!-- Adjust angle to your preference -->
+        </shape>
+    </item>
+</layer-list>

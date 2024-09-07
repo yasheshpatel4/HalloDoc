@@ -1,22 +1,15 @@
 package com.example.hallodoc;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
+import androidx.fragment.app.FragmentActivity;
+import androidx.viewpager2.adapter.FragmentStateAdapter;
+import androidx.viewpager2.widget.ViewPager2;
+import androidx.appcompat.widget.Toolbar;
+import androidx.cardview.widget.CardView;
 
-import android.app.Dialog;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
-import android.view.Gravity;
 import android.view.View;
-import android.view.ViewGroup;
-import android.view.Window;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -24,38 +17,112 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 public class dashboard extends AppCompatActivity {
 
     FloatingActionButton fab;
-    DrawerLayout d;
     BottomNavigationView b;
+    ViewPager2 viewPager;
+    CardView cardView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard);
 
+        // Set the status bar color to white
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP) {
+            getWindow().setStatusBarColor(android.graphics.Color.WHITE);
+        }
+
+// Set the status bar text/icons to dark color for better visibility on white background
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.M) {
+            getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
+        }
+
+
         // Initialize views
         b = findViewById(R.id.bottomNavigationView);
+        viewPager = findViewById(R.id.view_pager);
+        cardView = findViewById(R.id.card_view);
 
-        replaceFragment(new home());
+        // Set up the Toolbar with the hamburger icon
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        toolbar.setNavigationIcon(R.drawable.baseline_menu_24); // Ensure ic_hamburger icon exists
 
-        b.setBackground(null);
+        // Handle navigation icon click to toggle CardView visibility
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (cardView.getVisibility() == View.GONE) {
+                    cardView.setVisibility(View.VISIBLE);
+                } else {
+                    cardView.setVisibility(View.GONE);
+                }
+            }
+        });
+
+        // Set up the ViewPager with the sections adapter
+        viewPager.setAdapter(new ScreenSlidePagerAdapter(this));
+
+        // Handle bottom navigation item clicks
         b.setOnItemSelectedListener(item -> {
-
             if (item.getItemId() == R.id.home) {
-                replaceFragment(new home());
+                viewPager.setCurrentItem(0);
             } else if (item.getItemId() == R.id.Consult) {
-                replaceFragment(new consultations());
+                viewPager.setCurrentItem(1);
             } else if (item.getItemId() == R.id.Appointment) {
-                replaceFragment(new appointment());
+                viewPager.setCurrentItem(2);
             } else if (item.getItemId() == R.id.myhealth) {
-                replaceFragment(new myhealth());
+                viewPager.setCurrentItem(3);
             }
             return true;
         });
+
+        // Handle ViewPager page changes
+        viewPager.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
+            @Override
+            public void onPageSelected(int position) {
+                super.onPageSelected(position);
+                switch (position) {
+                    case 0:
+                        b.setSelectedItemId(R.id.home);
+                        break;
+                    case 1:
+                        b.setSelectedItemId(R.id.Consult);
+                        break;
+                    case 2:
+                        b.setSelectedItemId(R.id.Appointment);
+                        break;
+                    case 3:
+                        b.setSelectedItemId(R.id.myhealth);
+                        break;
+                }
+            }
+        });
     }
-    private void replaceFragment(Fragment fragment) {
-        FragmentManager fragmentManager = getSupportFragmentManager();
-        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        fragmentTransaction.replace(R.id.frame_layout, fragment);
-        fragmentTransaction.commit();
+
+    private class ScreenSlidePagerAdapter extends FragmentStateAdapter {
+        public ScreenSlidePagerAdapter(FragmentActivity fa) {
+            super(fa);
+        }
+
+        @Override
+        public Fragment createFragment(int position) {
+            switch (position) {
+                case 0:
+                    return new home();
+                case 1:
+                    return new consultations();
+                case 2:
+                    return new appointment();
+                case 3:
+                    return new myhealth();
+                default:
+                    return new home();
+            }
+        }
+
+        @Override
+        public int getItemCount() {
+            return 4; // Total number of fragments
+        }
     }
 }
