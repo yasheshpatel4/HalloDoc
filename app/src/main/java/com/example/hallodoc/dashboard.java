@@ -19,7 +19,6 @@ public class dashboard extends AppCompatActivity {
     FloatingActionButton fab;
     BottomNavigationView b;
     ViewPager2 viewPager;
-    CardView cardView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,7 +39,6 @@ public class dashboard extends AppCompatActivity {
         // Initialize views
         b = findViewById(R.id.bottomNavigationView);
         viewPager = findViewById(R.id.view_pager);
-        cardView = findViewById(R.id.card_view);
 
         // Set up the Toolbar with the hamburger icon
         Toolbar toolbar = findViewById(R.id.toolbar);
@@ -48,16 +46,6 @@ public class dashboard extends AppCompatActivity {
         toolbar.setNavigationIcon(R.drawable.baseline_menu_24); // Ensure ic_hamburger icon exists
 
         // Handle navigation icon click to toggle CardView visibility
-        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (cardView.getVisibility() == View.GONE) {
-                    cardView.setVisibility(View.VISIBLE);
-                } else {
-                    cardView.setVisibility(View.GONE);
-                }
-            }
-        });
 
         // Set up the ViewPager with the sections adapter
         viewPager.setAdapter(new ScreenSlidePagerAdapter(this));
@@ -110,9 +98,9 @@ public class dashboard extends AppCompatActivity {
                 case 0:
                     return new home();
                 case 1:
-                    return new consultations();
-                case 2:
                     return new appointment();
+                case 2:
+                    return new consultations();
                 case 3:
                     return new myhealth();
                 default:

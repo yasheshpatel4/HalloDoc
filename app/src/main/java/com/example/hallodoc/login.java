@@ -11,6 +11,8 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -35,6 +37,11 @@ public class login extends AppCompatActivity {
         signup = findViewById(R.id.login_text);
         name = findViewById(R.id.username);
         password = findViewById(R.id.password);
+
+        FirebaseUser u = FirebaseAuth.getInstance().getCurrentUser();
+        if(u!=null){
+            startActivity(new Intent(login.this,dashboard.class));
+        }
 
         // Login button listener
         login.setOnClickListener(new View.OnClickListener() {
@@ -116,6 +123,8 @@ public class login extends AppCompatActivity {
                     name.requestFocus();
                 }
             }
+
+
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
