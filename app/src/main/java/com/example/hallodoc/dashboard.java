@@ -100,7 +100,7 @@ public class dashboard extends AppCompatActivity {
                 case 1:
                     return new appointment();
                 case 2:
-                    return new consultations();
+                    return new consultation_new();
                 case 3:
                     return new myhealth();
                 default:

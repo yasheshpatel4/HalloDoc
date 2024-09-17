@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".mentalwelllness">
+
+    <!-- Doctor Profile Card -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="16dp"
+        android:background="@drawable/card_background"
+        android:layout_marginBottom="16dp">
+
+        <!-- Doctor Image -->
+        <ImageView
+            android:id="@+id/doctor_photo"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@drawable/yasheshdr"
+            android:layout_gravity="center_vertical"
+            android:scaleType="centerCrop"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/card_background" />
+
+        <!-- Doctor Info -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <!-- Doctor Name -->
+            <TextView
+                android:id="@+id/doctor_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Dr. Yashesh Patel"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:textColor="@color/black" />
+
+            <!-- Experience -->
+            <TextView
+                android:id="@+id/doctor_experience"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Experience: 10+ years"
+                android:textSize="14sp"
+                android:textColor="@color/black" />
+
+            <!-- Brief Description -->
+            <TextView
+                android:id="@+id/doctor_description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Specialist in Dermatology with expertise in treating acne, vitiligo, and other skin disorders."
+                android:textSize="14sp"
+                android:textColor="@color/black"
+                android:layout_marginTop="8dp" />
+
+            <!-- Button Section -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="12dp">
+
+                <!-- Consult Now Button (Initially hidden) -->
+                <Button
+                    android:id="@+id/consult_now_button"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Consult Now"
+                    android:backgroundTint="@color/lavender"
+                    android:textColor="@android:color/white"
+                    android:padding="10dp"
+                    android:visibility="gone" /> <!-- Hidden initially -->
+
+                <!-- More Info Button (Pay 30) -->
+                <Button
+                    android:id="@+id/more_info_button"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Pay 30"
+                    android:backgroundTint="@color/lavender"
+                    android:textColor="@android:color/white"
+                    android:padding="10dp"
+                    android:layout_marginStart="8dp" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

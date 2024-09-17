@@ -32,7 +32,7 @@
             <androidx.viewpager2.widget.ViewPager2
                 android:id="@+id/view_pager"
                 android:layout_width="match_parent"
-                android:layout_height="684dp" />
+                android:layout_height="680dp" />
         </LinearLayout>
 
 <!--      -->
@@ -40,7 +40,7 @@
         <com.google.android.material.bottomappbar.BottomAppBar
             android:id="@+id/bottomAppBar"
             android:layout_width="match_parent"
-            android:layout_height="55dp"
+            android:layout_height="60dp"
             android:layout_gravity="bottom"
             android:background="@color/white"
             app:fabCradleMargin="10dp"
