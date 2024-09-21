@@ -1,12 +1,22 @@
 package com.example.hallodoc;
 
+import android.annotation.SuppressLint;
+import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.ListView;
+import android.widget.TextView;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -55,10 +65,97 @@ public class home extends Fragment {
         }
     }
 
+
+    String[] dentalInfo = {
+            "Brush your teeth twice daily Use fluoride toothpaste Floss regularly to remove food particles Visit your dentist every 6 months Avoid sugary snacks and drinks"
+    };
+
+    String[] skinCareInfo = {
+            "Cleanse your face twice daily Use sunscreen with SPF 30+ Moisturize daily Drink plenty of water Exfoliate weekly Avoid prolonged sun exposure"
+    };
+
+    String[] eyeCareInfo = {
+            "Get regular eye check-ups Take breaks from screens Wear sunglasses for UV protection Keep your eyes hydrated Maintain a diet rich in Vitamin A Use proper lighting when reading"
+    };
+
+
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.fragment_home, container, false);
+
+        ListView d = view.findViewById(R.id.dental_id);
+        d.setVisibility(View.GONE);
+
+        ListView s = view.findViewById(R.id.skincare_id);
+        s.setVisibility(View.GONE);
+
+        ListView e = view.findViewById(R.id.eye_id);
+        e.setVisibility(View.GONE);
+
+        ImageView appointmnet = view.findViewById(R.id.book_image);
+        ImageView consult = view.findViewById(R.id.consult_image);
+
+        ArrayAdapter<String> dental = new ArrayAdapter<>(getContext(),
+                android.R.layout.simple_list_item_1, dentalInfo);
+        ArrayAdapter<String> skincare = new ArrayAdapter<>(getContext(),
+                android.R.layout.simple_list_item_1, skinCareInfo);
+        ArrayAdapter<String> eye  = new ArrayAdapter<>(getContext(),
+                android.R.layout.simple_list_item_1, eyeCareInfo);
+
+        d.setAdapter(dental);
+        s.setAdapter(skincare);
+        e.setAdapter(eye);
+
+        LinearLayout dental_layout = (LinearLayout) view.findViewById(R.id.dental_layout);
+        dental_layout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (d.getVisibility() == View.GONE) {
+                    d.setVisibility(View.VISIBLE);
+                    s.setVisibility(View.GONE); // Hide skincare info
+                    e.setVisibility(View.GONE); // Hide eye info
+                } else {
+                    d.setVisibility(View.GONE);
+                }
+            }
+        });
+
+        LinearLayout skincare_layout = (LinearLayout) view.findViewById(R.id.skincare_layout);
+        skincare_layout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (s.getVisibility() == View.GONE) {
+                    s.setVisibility(View.VISIBLE);
+                    d.setVisibility(View.GONE); // Hide dental info
+                    e.setVisibility(View.GONE); // Hide eye info
+                } else {
+                    s.setVisibility(View.GONE);
+                }
+            }
+        });
+
+        @SuppressLint({"MissingInflatedId", "LocalSuppress"})
+        LinearLayout eye_layout = (LinearLayout) view.findViewById(R.id.eye_layout);
+        eye_layout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (e.getVisibility() == View.GONE) {
+                    e.setVisibility(View.VISIBLE);
+                    d.setVisibility(View.GONE); // Hide dental info
+                    s.setVisibility(View.GONE); // Hide skincare info
+                } else {
+                    e.setVisibility(View.GONE);
+                }
+            }
+        });
+
+
+
+
+
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home, container, false);
+        return view;
     }
 }

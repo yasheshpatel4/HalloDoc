@@ -8,10 +8,10 @@ import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
-
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
@@ -19,12 +19,15 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.example.hallodoc.fragment.DatePickerFragment;
+import com.example.hallodoc.fragment.TimePickerFragment;
 import com.google.android.material.snackbar.Snackbar;
 
 public class dental extends AppCompatActivity {
-    Button b1,b2;
-    RadioGroup timeOptions;
-    String selectedTime = "10 AM";
+    Button b1,b2,b3,b4;
+    EditText t,tt;
+    String selectedTime;
+    String selectedDate;
     @SuppressLint({"RestrictedApi", "MissingInflatedId"})
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,19 +36,33 @@ public class dental extends AppCompatActivity {
         setContentView(R.layout.activity_dental);
         b1=(Button)findViewById(R.id.email);
         b2=(Button)findViewById(R.id.call);
-        timeOptions = (RadioGroup) findViewById(R.id.option);
-        timeOptions.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+        b3=(Button)findViewById(R.id.button2);
+        b4=(Button)findViewById(R.id.button3);
+        t=(EditText) findViewById(R.id.e1);
+        tt=(EditText) findViewById(R.id.e2);
+        b3.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
-                RadioButton selectedButton = findViewById(checkedId);
-                selectedTime = selectedButton.getText().toString();
+            public void onClick(View view) {
+                TimePickerFragment t1=new TimePickerFragment(t);
+                t1.show(getSupportFragmentManager(),"Time picker");
+
+            }
+        });
+        b4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                DatePickerFragment t1=new DatePickerFragment(tt);
+                t1.show(getSupportFragmentManager(),"Date Picker");
+
             }
         });
 
         b1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String emailBody = "Hello, I would like to inquire about an appointment at " + selectedTime + ".";
+                selectedDate=tt.getText().toString();
+                selectedTime=t.getText().toString();
+                String emailBody = "Hello, I would like to inquire about an appointment at " + selectedTime + " on date "+selectedDate;
                 sendEmail("yasheshpatel425@gmail.com", "Appointment Inquiry", emailBody);
             }
         });

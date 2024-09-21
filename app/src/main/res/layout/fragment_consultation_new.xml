@@ -3,9 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".consultation_new">
 
-    <!-- TODO: Update blank fragment layout -->
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -16,7 +16,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="16dp">
-
             <TextView
                 android:id="@+id/search_health_problems_label"
                 android:layout_width="wrap_content"
@@ -30,7 +29,8 @@
                 android:id="@+id/search_bar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Search symptoms. Eg: Cold, cough, fever"
+                android:hint="Search symptoms.Eg: Cold,cough,fever"
+                android:textSize="15dp"
                 android:drawableLeft="@drawable/ic_search"
                 android:padding="10dp"
                 android:background="@drawable/search_bar_background" />
@@ -53,200 +53,73 @@
                 android:layout_gravity="center">
 
                 <!-- First Row -->
-                <LinearLayout
-                    android:orientation="vertical"
+                <ImageView
+                    android:id="@+id/mental_wellness_icon"
+                    android:layout_width="150dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/pic5"
+                    android:layout_gravity="center" />
+
+
+                <ImageView
+                    android:id="@+id/gynaecology_icon"
+                    android:layout_width="150dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/pic3"
+                    android:layout_gravity="center" />
+                <TextView
+                    android:id="@+id/mental_wellness_text"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
-
-                    <ImageView
-                        android:id="@+id/mental_wellness_icon"
-                        android:layout_width="48dp"
-                        android:layout_height="48dp"
-                        android:src="@drawable/pic5" />
-                    <TextView
-                        android:id="@+id/mental_wellness_text"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Mental Wellness" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:orientation="vertical"
+                    android:layout_height="wrap_content"
+                    android:text="Mental Wellness"
+                    android:layout_gravity="center" />
+                <TextView
+                    android:id="@+id/gynaecology_text"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
-
-                    <ImageView
-                        android:id="@+id/gynaecology_icon"
-                        android:layout_width="48dp"
-                        android:layout_height="48dp"
-                        android:src="@drawable/pic3" />
-                    <TextView
-                        android:id="@+id/gynaecology_text"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Gynaecology" />
-                </LinearLayout>
+                    android:layout_height="wrap_content"
+                    android:text="Gynaecology"
+                    android:layout_gravity="center" />
 
                 <!-- Second Row -->
-                <LinearLayout
-                    android:orientation="vertical"
+                <ImageView
+                    android:id="@+id/general_physician_icon"
+                    android:layout_width="150dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/pic1"
+                    android:layout_gravity="center" />
+
+                <ImageView
+                    android:id="@+id/orthopedist_icon"
+                    android:layout_width="150dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/pic2"
+                    android:layout_gravity="center" />
+                <TextView
+                    android:id="@+id/general_physician_text"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
-
-                    <ImageView
-                        android:id="@+id/general_physician_icon"
-                        android:layout_width="48dp"
-                        android:layout_height="48dp"
-                        android:src="@drawable/pic1" />
-                    <TextView
-                        android:id="@+id/general_physician_text"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="General Physician" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:orientation="vertical"
+                    android:layout_height="wrap_content"
+                    android:text="General Physician"
+                    android:layout_gravity="center" />
+                <TextView
+                    android:id="@+id/orthopedist_text"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
-
-                    <ImageView
-                        android:id="@+id/orthopedist_icon"
-                        android:layout_width="48dp"
-                        android:layout_height="48dp"
-                        android:src="@drawable/pic2" />
-                    <TextView
-                        android:id="@+id/orthopedist_text"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Orthopedist" />
-                </LinearLayout>
+                    android:layout_height="wrap_content"
+                    android:text="Orthopedist"
+                    android:layout_gravity="center" />
             </GridLayout>
-
-            <!-- Common Health Issues Section -->
             <TextView
-                android:id="@+id/common_health_issues_label"
+                android:id="@+id/label2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Common Health Issues"
                 android:textStyle="bold"
                 android:textSize="18sp"
                 android:layout_marginTop="16dp" />
-
-            <GridLayout
+            <ImageView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:rowCount="3"
-                android:columnCount="2"
-                android:layout_marginTop="15dp"
-                android:layout_gravity="center">
-
-                <!-- First Row -->
-                <LinearLayout
-                    android:orientation="vertical"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
-
-                    <ImageView
-                        android:id="@+id/stomach_pain_icon"
-                        android:layout_width="48dp"
-                        android:layout_height="48dp"
-                        android:src="@drawable/pic1" />
-                    <TextView
-                        android:id="@+id/stomach_pain_text"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Stomach Pain" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:orientation="vertical"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
-
-                    <ImageView
-                        android:id="@+id/vertigo_icon"
-                        android:layout_width="48dp"
-                        android:layout_height="48dp"
-                        android:src="@drawable/pic1" />
-                    <TextView
-                        android:id="@+id/vertigo_text"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Vertigo" />
-                </LinearLayout>
-
-                <!-- Second Row -->
-                <LinearLayout
-                    android:orientation="vertical"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
-
-                    <ImageView
-                        android:id="@+id/acne_icon"
-                        android:layout_width="48dp"
-                        android:layout_height="48dp"
-                        android:src="@drawable/pic1" />
-                    <TextView
-                        android:id="@+id/acne_text"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Acne" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:orientation="vertical"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
-
-                    <ImageView
-                        android:id="@+id/pcos_icon"
-                        android:layout_width="48dp"
-                        android:layout_height="48dp"
-                        android:src="@drawable/pic1" />
-                    <TextView
-                        android:id="@+id/pcos_text"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="PCOS" />
-                </LinearLayout>
-
-                <!-- Third Row -->
-                <LinearLayout
-                    android:orientation="vertical"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
-
-                    <ImageView
-                        android:id="@+id/thyroid_icon"
-                        android:layout_width="48dp"
-                        android:layout_height="48dp"
-                        android:src="@drawable/pic1" />
-                    <TextView
-                        android:id="@+id/thyroid_text"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Thyroid" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:orientation="vertical"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
-
-                    <ImageView
-                        android:id="@+id/headaches_icon"
-                        android:layout_width="48dp"
-                        android:layout_height="48dp"
-                        android:src="@drawable/pic1" />
-                    <TextView
-                        android:id="@+id/headaches_text"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Headaches" />
-                </LinearLayout>
-            </GridLayout>
-
+                android:layout_height="280dp"
+                android:id="@+id/img1"
+                android:src="@drawable/consultant_1"/>
         </LinearLayout>
     </ScrollView>
 </FrameLayout>
