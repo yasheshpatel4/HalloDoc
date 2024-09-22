@@ -3,13 +3,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".home"
     android:background="@color/white"
-    android:id="@+id/homeidlayout"
-    >
+    android:id="@+id/homeidlayout">
 
     <!-- TODO: Update blank fragment layout -->
-    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginBottom="26dp"
@@ -22,16 +22,34 @@
             android:padding="16dp">
 
             <!-- Search Bar -->
-            <EditText
-                android:id="@+id/searchBar"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Search for doctors"
-                android:drawableStart="@drawable/ic_search"
-                android:padding="12dp"
-                android:background="@drawable/search_bar_background"/>
+<!--            <EditText-->
+<!--                android:id="@+id/searchBar"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:hint="Search for doctors"-->
+<!--                android:drawableStart="@drawable/ic_search"-->
+<!--                android:padding="12dp"-->
+<!--                android:background="@drawable/search_bar_background"/>-->
 
             <!-- Appointment and Consult Options -->
+            <SearchView
+                android:id="@+id/search_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/search_bar_background"
+                android:queryHint="Ask me something..."
+                />
+
+            <TextView
+                android:id="@+id/response_text_view"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:padding="16dp"
+                android:textSize="10sp"
+                android:textColor="@android:color/black"
+                android:background="@drawable/search_bar_background"
+               />
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
