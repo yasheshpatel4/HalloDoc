@@ -1,5 +1,4 @@
 package com.example.hallodoc;
 
-public class sample {
-
+public class test {
 }
