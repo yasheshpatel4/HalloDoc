@@ -1,5 +1,7 @@
 package com.example.hallodoc;
 
+import android.content.Intent;
+import android.media.Image;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
@@ -7,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.SearchView;
@@ -14,11 +17,14 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.io.IOException;
+import java.util.Objects;
 
 import okhttp3.Call;
 import okhttp3.Callback;
@@ -47,6 +53,7 @@ public class home extends Fragment {
 
     private SearchView searchView;
     private TextView responseTextView;
+    private ImageView appoinment_image, consult_image;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -64,6 +71,8 @@ public class home extends Fragment {
         // Initialize the SearchView and TextView for responses
         searchView = view.findViewById(R.id.search_view);
         responseTextView = view.findViewById(R.id.response_text_view);
+        appoinment_image = view.findViewById(R.id.book_image);
+        consult_image = view.findViewById(R.id.consult_image);
 
         // Set Adapters for ListViews
         ArrayAdapter<String> dental = new ArrayAdapter<>(getContext(), android.R.layout.simple_list_item_1, dentalInfo);
@@ -105,6 +114,20 @@ public class home extends Fragment {
                 s.setVisibility(View.GONE); // Hide skincare info
             } else {
                 e.setVisibility(View.GONE);
+            }
+        });
+
+        appoinment_image.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
+
+        consult_image.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
             }
         });
 
@@ -196,4 +219,6 @@ public class home extends Fragment {
     private void showErrorOnUI(String errorMessage) {
         getActivity().runOnUiThread(() -> responseTextView.setText(errorMessage));
     }
+
+
 }

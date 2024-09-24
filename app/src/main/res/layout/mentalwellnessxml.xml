@@ -192,4 +192,92 @@
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="16dp"
+        android:background="@drawable/card_background"
+        android:layout_marginBottom="16dp">
+
+        <!-- Doctor Image -->
+        <ImageView
+            android:id="@+id/doctor_zeel"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@drawable/zeel_d"
+            android:layout_gravity="center_vertical"
+            android:scaleType="centerCrop"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/card_background" />
+
+        <!-- Doctor Info -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <!-- Doctor Name -->
+            <TextView
+                android:id="@+id/doctor_zeel_patel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Dr. Zeel Patel"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:textColor="@color/black" />
+
+            <!-- Experience -->
+            <TextView
+                android:id="@+id/doctor_experience3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Experience: 20+ years"
+                android:textSize="14sp"
+                android:textColor="@color/black" />
+
+            <!-- Brief Description -->
+            <TextView
+                android:id="@+id/doctor_description3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Specializes in treating skin conditions related to light sensitivity, such as sun allergies and photodermatitis."
+                android:textSize="14sp"
+                android:textColor="@color/black"
+                android:layout_marginTop="8dp" />
+
+            <!-- Button Section -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="12dp">
+
+                <!-- Consult Now Button (Initially hidden) -->
+                <Button
+                    android:id="@+id/consult_now_button3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Consult Now"
+                    android:backgroundTint="@color/lavender"
+                    android:textColor="@android:color/white"
+                    android:padding="10dp"
+                    android:visibility="gone" /> <!-- Hidden initially -->
+
+                <!-- More Info Button (Pay 30) -->
+                <Button
+                    android:id="@+id/more_info_button3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Pay 30"
+                    android:backgroundTint="@color/lavender"
+                    android:textColor="@android:color/white"
+                    android:padding="10dp"
+                    android:layout_marginStart="8dp" />
+            </LinearLayout>
+        </LinearLayout>
+</LinearLayout>
 </LinearLayout>
