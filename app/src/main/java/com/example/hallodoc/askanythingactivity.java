@@ -34,7 +34,7 @@ public class askanythingactivity extends AppCompatActivity {
         setContentView(R.layout.fragment_home);
 
         searchView = findViewById(R.id.search_view);
-        responseTextView = findViewById(R.id.response_text_view);
+//        responseTextView = findViewById(R.id.response_text_view);
 
         // Handle search query submission
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {

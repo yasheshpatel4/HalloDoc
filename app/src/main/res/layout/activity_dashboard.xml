@@ -6,7 +6,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:id="@+id/drawer_layout">
 
     <!-- Main content -->
     <androidx.coordinatorlayout.widget.CoordinatorLayout
@@ -41,7 +42,7 @@
         <com.google.android.material.bottomappbar.BottomAppBar
             android:id="@+id/bottomAppBar"
             android:layout_width="match_parent"
-            android:layout_height="60dp"
+            android:layout_height="58dp"
             android:layout_gravity="bottom"
             android:background="@color/white"
             app:fabCradleMargin="10dp"

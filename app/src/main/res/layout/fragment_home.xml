@@ -40,16 +40,6 @@
                 android:queryHint="Ask me something..."
                 />
 
-            <TextView
-                android:id="@+id/response_text_view"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:padding="16dp"
-                android:textSize="10sp"
-                android:textColor="@android:color/black"
-                android:background="@drawable/search_bar_background"
-               />
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

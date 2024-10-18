@@ -70,7 +70,7 @@ public class home extends Fragment {
 
         // Initialize the SearchView and TextView for responses
         searchView = view.findViewById(R.id.search_view);
-        responseTextView = view.findViewById(R.id.response_text_view);
+//        responseTextView = view.findViewById(R.id.response_text_view);
         appoinment_image = view.findViewById(R.id.book_image);
         consult_image = view.findViewById(R.id.consult_image);
 
