@@ -10,17 +10,17 @@
     <item
         android:id="@+id/Consult"
         android:title="appoinment"
-        android:icon="@drawable/baseline_whatshot_24" />
+        android:icon="@drawable/medicalappointment" />
 
     <item
         android:id="@+id/Appointment"
         android:title="consultation"
-        android:icon="@drawable/baseline_subscriptions_24" />
+        android:icon="@drawable/consulting" />
 
     <item
         android:id="@+id/myhealth"
         android:title="Myhealth"
-        android:icon="@drawable/baseline_video_library_24" />
+        android:icon="@drawable/cardiogram" />
 
 
 </menu>

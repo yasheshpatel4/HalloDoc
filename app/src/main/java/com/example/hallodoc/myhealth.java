@@ -1,5 +1,6 @@
 package com.example.hallodoc;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -7,12 +8,8 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link myhealth#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class myhealth extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
@@ -53,12 +50,28 @@ public class myhealth extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_myhealth, container, false);
+        View view = inflater.inflate(R.layout.fragment_myhealth, container, false);
+
+        Button navigateButton = view.findViewById(R.id.createProfileButton);
+
+        // Set an OnClickListener on the button
+        navigateButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Create an Intent to start the new activity
+                Intent intent = new Intent(getActivity(), profileactivity.class);
+                startActivity(intent);  // Start the new activity
+            }
+        });
+
+
+        return view;
     }
 }

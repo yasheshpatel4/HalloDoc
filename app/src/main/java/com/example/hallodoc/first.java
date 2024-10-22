@@ -22,6 +22,15 @@ public class first extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_first);
 
+        ImageView backButton = findViewById(R.id.back_button);
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Navigate back when the back button is pressed
+                onBackPressed();
+            }
+        });
+
         b1=(ImageView) findViewById(R.id.imageView);
 
         b1.setOnClickListener(new View.OnClickListener() {

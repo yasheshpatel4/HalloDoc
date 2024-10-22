@@ -41,25 +41,29 @@
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:text="E-Mail"
+      android:backgroundTint="#2F43AF"
+      android:layout_gravity="center_horizontal"
+      android:textColor="@android:color/white"
       app:layout_constraintBottom_toBottomOf="parent"
       app:layout_constraintEnd_toStartOf="@+id/call"
-      app:layout_constraintHorizontal_bias="0.67"
+      app:layout_constraintHorizontal_bias="0.778"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toTopOf="parent"
-      app:layout_constraintVertical_bias="0.385"
-      android:backgroundTint="#2773C5"/>
+      app:layout_constraintVertical_bias="0.499" />
 
   <Button
       android:id="@+id/call"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
-      android:layout_marginEnd="120dp"
+      android:layout_marginEnd="112dp"
       android:text="Phone"
+      android:backgroundTint="#2F43AF"
+      android:layout_gravity="center_horizontal"
+      android:textColor="@android:color/white"
       app:layout_constraintBottom_toBottomOf="parent"
       app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintTop_toTopOf="parent"
-      app:layout_constraintVertical_bias="0.385"
-      android:backgroundTint="#2773C5"/>
+      app:layout_constraintVertical_bias="0.499" />
 
   <TextView
       android:id="@+id/appointment_time_label"
@@ -74,37 +78,61 @@
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toBottomOf="@id/textView3" />
 
-  <RadioGroup
-      android:id="@+id/option"
+  <EditText
+      android:id="@+id/e1"
+      android:layout_width="200dp"
+      android:layout_height="wrap_content"
+      android:hint="24-hour formate"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.189"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintVertical_bias="0.317" />
+
+  <Button
+      android:id="@+id/button2"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
-      android:orientation="horizontal"
-      app:layout_constraintTop_toBottomOf="@id/appointment_time_label"
-      app:layout_constraintStart_toStartOf="parent"
+      android:layout_marginEnd="60dp"
+      android:text="Select time"
+      android:backgroundTint="#2F43AF"
+      android:layout_gravity="center_horizontal"
+      android:textColor="@android:color/white"
+      app:layout_constraintBottom_toBottomOf="parent"
       app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintHorizontal_bias="0.2"
-      app:layout_constraintVertical_bias="0.05">
+      app:layout_constraintHorizontal_bias="0.45"
+      app:layout_constraintStart_toEndOf="@+id/e1"
+      app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintVertical_bias="0.314" />
 
+  <EditText
+      android:id="@+id/e2"
+      android:layout_width="200dp"
+      android:layout_height="wrap_content"
+      android:hint="DD-MM-YYYY"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.189"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintVertical_bias="0.397" />
 
-    <RadioButton
-        android:id="@+id/time"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="10 AM" />
-
-
-    <RadioButton
-        android:id="@+id/time_2pm"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="2 PM" />
-
-    <RadioButton
-        android:id="@+id/time_4pm"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="4 PM" />
-  </RadioGroup>
+  <Button
+      android:id="@+id/button3"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginEnd="60dp"
+      android:text="Select date"
+      android:backgroundTint="#2F43AF"
+      android:layout_gravity="center_horizontal"
+      android:textColor="@android:color/white"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.45"
+      app:layout_constraintStart_toEndOf="@+id/e1"
+      app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintVertical_bias="0.393" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
